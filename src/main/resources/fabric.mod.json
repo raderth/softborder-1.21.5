@@ -1,0 +1,48 @@
+{
+	"schemaVersion": 1,
+	"id": "softborder",
+	"version": "${version}",
+	"name": "SoftBorder",
+	"description": "A mod that creates exclusion zones and manages chunk deletion",
+	"authors": [
+		"raderth"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/softborder/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "raderth.softborder.SoftBorder",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "raderth.softborder.SoftBorderClient",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"softborder.mixins.json",
+		{
+			"config": "softborder.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.14",
+		"minecraft": "~1.21.5",
+		"java": ">=21",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
